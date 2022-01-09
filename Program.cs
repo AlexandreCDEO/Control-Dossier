@@ -10,7 +10,6 @@ void ConfigureServices(WebApplicationBuilder builder)
 {
     builder.Services.AddDbContext<AppDbContext>();
 }
-
 void ConfigureMvc(WebApplicationBuilder builder)
 {
     builder.Services.AddControllers()

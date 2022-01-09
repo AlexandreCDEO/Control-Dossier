@@ -53,3 +53,4 @@
 /Users/alexandredev/Dev/Control-Dossier/obj/Debug/net6.0/ref/Control-Dossier.dll
 /Users/alexandredev/Dev/Control-Dossier/obj/Debug/net6.0/Control-Dossier.pdb
 /Users/alexandredev/Dev/Control-Dossier/obj/Debug/net6.0/Control-Dossier.genruntimeconfig.cache
+/Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
