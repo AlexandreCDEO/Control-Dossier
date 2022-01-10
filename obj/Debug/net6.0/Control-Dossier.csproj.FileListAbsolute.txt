@@ -7,6 +7,7 @@
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/ref/Control-Dossier.dll
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/Control-Dossier.pdb
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/Humanizer.dll
+/Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -20,6 +21,7 @@
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+/Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/SecureIdentity.dll
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/System.Drawing.Common.dll
 /Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
@@ -53,4 +55,3 @@
 /Users/alexandredev/Dev/Control-Dossier/obj/Debug/net6.0/ref/Control-Dossier.dll
 /Users/alexandredev/Dev/Control-Dossier/obj/Debug/net6.0/Control-Dossier.pdb
 /Users/alexandredev/Dev/Control-Dossier/obj/Debug/net6.0/Control-Dossier.genruntimeconfig.cache
-/Users/alexandredev/Dev/Control-Dossier/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

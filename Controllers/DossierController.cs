@@ -1,12 +1,13 @@
 using Control_Dossier.Data;
-using Control_Dossier.Extension;
+using Control_Dossier.Extensions;
 using Control_Dossier.Models;
-using Control_Dossier.ViewModel;
-using Control_Dossier.ViewModel.Dossier;
+using Control_Dossier.ViewModels;
+using Control_Dossier.ViewModels.Dossier;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Control_Dossier.Controller;
+namespace Control_Dossier.Controllers;
 
 [ApiController]
 public class DossierController : ControllerBase
@@ -140,7 +141,6 @@ public class DossierController : ControllerBase
             
         }
     }
-
 
     [HttpDelete("v1/dossiers/{id:int}")]
     public async Task<IActionResult> DeleteAsync(

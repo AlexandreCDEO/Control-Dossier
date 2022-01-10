@@ -1,4 +1,4 @@
-namespace Control_Dossier.ViewModel;
+namespace Control_Dossier.ViewModels;
 
 public class ResultViewModel<T>
 {

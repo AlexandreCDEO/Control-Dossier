@@ -1,9 +1,11 @@
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
+using Control_Dossier.Extensions;
 using Control_Dossier.Models;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Control_Dossier.Service;
+namespace Control_Dossier.Services;
 
 public class TokenService
 {
@@ -11,8 +13,10 @@ public class TokenService
     {
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(Configuration.JwtKey);
+        var claims = user.GetClaims();
         var tokenDercriptor = new SecurityTokenDescriptor
         {
+            Subject = new ClaimsIdentity(claims),
             Expires = DateTime.UtcNow.AddHours(8),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), 
                 SecurityAlgorithms.HmacSha256Signature)

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace Control_Dossier.Extension;
+namespace Control_Dossier.Extensions;
 
 public static class ModelStateExtension
 {

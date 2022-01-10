@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Mbb+Voqomfq+5M+mL93y9G54PSU3W7AdAqs/ecBdckfz3rzH4ijzJcZ18iUqSSpLDClboWmjNs04NgHUJhxpWQ==",
+  "dgSpecHash": "536r+XY7NwzmiiXTm8l5Kkwk2V6hXQ8V2DCdEKW6MKpweMsGoVyZHi09fHic9kHTP49LJK/S7OBbeBEB7jLmbQ==",
   "success": true,
   "projectFilePath": "/Users/alexandredev/Dev/Control-Dossier/Control-Dossier.csproj",
   "expectedPackageFiles": [
@@ -51,6 +51,7 @@
     "/Users/alexandredev/.nuget/packages/microsoft.netcore.platforms/3.1.0/microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "/Users/alexandredev/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/alexandredev/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "/Users/alexandredev/.nuget/packages/secureidentity/1.0.2/secureidentity.1.0.2.nupkg.sha512",
     "/Users/alexandredev/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
     "/Users/alexandredev/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/alexandredev/.nuget/packages/system.configuration.configurationmanager/4.7.0/system.configuration.configurationmanager.4.7.0.nupkg.sha512",
