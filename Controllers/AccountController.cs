@@ -3,6 +3,7 @@ using Control_Dossier.Extensions;
 using Control_Dossier.Models;
 using Control_Dossier.Services;
 using Control_Dossier.ViewModels;
+using Control_Dossier.ViewModels.Account;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SecureIdentity.Password;
@@ -34,7 +35,13 @@ public class AccountController : ControllerBase
         {
             await context.Users.AddAsync(user);
             await context.SaveChangesAsync();
-            return Created($"v1/accounts/{user.Id}", user);
+            return Ok(new ResultViewModel<dynamic>(
+                new
+                {
+                    Name = user.Name,
+                    Email = user.Email
+                }));
+
         }
         catch (DbUpdateException e)
         {

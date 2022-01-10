@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Control_Dossier.Controllers;
-
+[Authorize]
 [ApiController]
 public class DossierController : ControllerBase
 {
@@ -25,7 +25,7 @@ public class DossierController : ControllerBase
 
         try
         {
-            var user = await context.Users.FirstOrDefaultAsync();
+            var user = await context.Users.FirstOrDefaultAsync(x => x.Email == User.Identity.Name);
             var dossier = new Dossier
             {
                 Id = 0,
@@ -57,18 +57,37 @@ public class DossierController : ControllerBase
 
     [HttpGet("v1/dossiers")]
     public async Task<IActionResult> GetAsync(
-        [FromServices] AppDbContext context
+        [FromServices] AppDbContext context,
+        [FromQuery] int page = 0,
+        [FromQuery] int pageSize = 25
     )
     {
         try
         {
+            var count = await context.Dossiers.AsNoTracking().CountAsync();
             var dossiers = await context
                 .Dossiers
                 .AsNoTracking()
-                .OrderByDescending(x=>x.CreateDate)
+                .Include(x=>x.Author)
+                .Select(x=>new ListDossierViewModel
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    Author = $"{x.Author.Name} - {x.Author.Email}",
+                    LastUpdateDate = x.LastUpdateDate
+                })
+                .Skip(page * pageSize)
+                .Take(pageSize)
+                .OrderByDescending(x=>x.LastUpdateDate)
                 .ToListAsync();
 
-            return Ok(new ResultViewModel<List<Dossier>>(dossiers));
+            return Ok(new ResultViewModel<dynamic>(new
+            {
+                total = count,
+                page,
+                pageSize,
+                dossiers
+            }));
         }
         catch (Exception e)
         {
@@ -100,6 +119,52 @@ public class DossierController : ControllerBase
         {
             return StatusCode(500, new ResultViewModel<string>("01E04 - Falha interna do servidor"));
         }  
+    }
+
+    [HttpGet("v1/dossiers/author/{author}")]
+    public async Task<IActionResult> GetByAuthorAsync(
+        [FromServices] AppDbContext context,
+        [FromRoute] string author,
+        [FromQuery] int page = 0,
+        [FromQuery] int pageSize = 25
+        )
+    {
+        try
+        {
+            var dossiers = await context
+                .Dossiers
+                .AsNoTracking()
+                .Include(x => x.Author)
+                .Where(x => x.Author.Name == author)
+                .Skip(page * pageSize)
+                .Take(pageSize)
+                .Select(x=>new ListDossierViewModel
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    Author = $"{x.Author.Name} - {x.Author.Email}",
+                    LastUpdateDate = x.LastUpdateDate
+                })
+                .ToListAsync();
+
+            var count = dossiers.Count;
+
+            return Ok(new ResultViewModel<dynamic>(new
+            {
+                total = count,
+                page,
+                pageSize,
+                dossiers
+            }));
+        }
+        catch (DbUpdateException e)
+        {
+            return StatusCode(500, new ResultViewModel<string>("01E11 - Author não encontrado"));
+        }
+        catch
+        {
+            return StatusCode(500, new ResultViewModel<string>("01E20 - Falha interna do servidor"));
+        }
     }
 
     [HttpPut("v1/dossiers/{id:int}")]

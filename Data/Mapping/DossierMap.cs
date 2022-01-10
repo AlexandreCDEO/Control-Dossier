@@ -49,7 +49,9 @@ public class DossierMap : IEntityTypeConfiguration<Dossier>
             .HasColumnType("SMALLDATETIME")
             .HasDefaultValue(DateTime.Now.ToUniversalTime());
 
-        builder.HasIndex(x => x.Code, "IX_Dossier_Code");
+        builder.HasIndex(x => x.Code, "IX_Dossier_Code")
+            .IsUnique();
+            
 
         builder.HasOne(x => x.Author)
             .WithMany(x => x.Dossiers)

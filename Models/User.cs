@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Control_Dossier.Models;
 
 public class User

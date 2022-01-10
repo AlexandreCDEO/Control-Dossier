@@ -39,7 +39,6 @@ void ConfigureMvc(WebApplicationBuilder builder)
         });
         
 }
-
 void ConfigureAnthentication(WebApplicationBuilder builder)
 {
     var key = Encoding.ASCII.GetBytes(Configuration.JwtKey);

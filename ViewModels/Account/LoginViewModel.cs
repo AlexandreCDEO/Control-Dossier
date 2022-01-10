@@ -1,7 +1,6 @@
 using System.ComponentModel.DataAnnotations;
-using System.Net.Mail;
 
-namespace Control_Dossier.ViewModels;
+namespace Control_Dossier.ViewModels.Account;
 
 public class LoginViewModel
 {

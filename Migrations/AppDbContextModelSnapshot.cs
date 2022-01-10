@@ -54,13 +54,13 @@ namespace Control_Dossier.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("SMALLDATETIME")
-                        .HasDefaultValue(new DateTime(2022, 1, 9, 1, 8, 11, 934, DateTimeKind.Utc).AddTicks(5710))
+                        .HasDefaultValue(new DateTime(2022, 1, 10, 12, 57, 57, 823, DateTimeKind.Utc).AddTicks(4930))
                         .HasColumnName("CreateDate");
 
                     b.Property<DateTime>("LastUpdateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("SMALLDATETIME")
-                        .HasDefaultValue(new DateTime(2022, 1, 9, 1, 8, 11, 934, DateTimeKind.Utc).AddTicks(5860))
+                        .HasDefaultValue(new DateTime(2022, 1, 10, 12, 57, 57, 823, DateTimeKind.Utc).AddTicks(5100))
                         .HasColumnName("LastUpdateDate");
 
                     b.Property<string>("Title")
@@ -73,7 +73,8 @@ namespace Control_Dossier.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.HasIndex(new[] { "Code" }, "IX_Dossier_Code");
+                    b.HasIndex(new[] { "Code" }, "IX_Dossier_Code")
+                        .IsUnique();
 
                     b.ToTable("Dossier", (string)null);
                 });
